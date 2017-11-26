@@ -1,3 +1,27 @@
+##############################################################################################################################################
+#
+#   (C) Adam Tonge 2017
+#   Student number: C14509853
+#   Course: DT211C/4
+#   Date: 29/11/2017
+#
+#   Title: SuggestASong - Final Year Project
+#
+#   This program prompts a user for their email and the password to that email. It then looks through
+#   the user's emails until an email is found that is between the time right now and 30 minutes in the future.
+#   The body from the email found between that time is extracted and then filtered into just English words.
+#   These English words are then added to a list(filtered_email). When the list is not empty it prints the
+#   English words to the screen and exits the loop which exits the program. 
+#
+#   REFERENCES:
+#   Bird, Steven, Edward Loper and Ewan Klein (2009), Natural Language Processing with Python. O’Reilly Media Inc.
+#
+#   Python Software Foundation(2017) imaplib -IMAP4 protocol client. Available at:
+#   https://docs.python.org/2/library/imaplib.html (Accessed 19th November 2017)
+#
+#################################################################################################################################################
+
+
 #list of imports
 import imaplib
 import email
@@ -5,7 +29,6 @@ import datetime
 from nltk.tokenize import word_tokenize
 from nltk.corpus import words
 from nltk.corpus import stopwords
-import pickle
 
 userEmail = input("Whats your email?")
 userPass = input("Whats your password?")
@@ -81,7 +104,7 @@ for x in range(i):
 
     #my_dict[time] = filtered_email
 
-    #check if filtered_email is empty
+    #check if filtered_email is not empty
     if filtered_email:
         print(emailTime)
         print("Keywords from email are:")
